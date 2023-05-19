@@ -5,17 +5,17 @@ import org.springframework.data.relational.core.mapping.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Table("QUESTIONS")
 public class Questions {
     @Id
     private Long id;
     
     private Long quizId;
-    
-    private String quizName;
 
     private String question;
 
@@ -29,4 +29,5 @@ public class Questions {
     
     private int questionScores;
 
+    private Long questionNumber;
 }

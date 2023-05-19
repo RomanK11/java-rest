@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Admin panel</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    
+</head>
+
+<body style="background-color: #b5bcc3;">
+    <h1 style="text-align: center; vertical-align: middle; font-family: Ubuntu">Добавьте вопрос для викторины</h1>
+    <form style="text-align: center; vertical-align: middle; font-family: Ubuntu" method="post" th:object="${question}">
+        <!-- <div>
+            <h3>quiz id</h3>
+            <input type="text" th:field="*{quizId}">
+        </div> -->
+        <div>
+            <h3>вопрос</h3>
+            <input type="text" style="width: 35em; height: 3em;" th:field="*{question}">
+        </div>
+        <div>
+            <h3>1 вариант ответа</h3>
+            <input style="width: 20em; height: 2em;" type="text" th:field="*{variant1}">
+        </div>
+        <div>
+            <h3>2 вариант ответа</h3>
+            <input style="width: 20em; height: 2em;" type="text" th:field="*{variant2}">
+        </div>
+        <div>
+            <h3>3 вариант ответа</h3>
+            <input style="width: 20em; height: 2em;" type="text" th:field="*{variant3}">
+        </div>
+        <div>
+            <h3>правильный ответ</h3>
+            <input style="width: 20em; height: 2em;" type="text" th:field="*{answer}">
+        </div>
+        <div>
+            <h3>очки за вопрос</h3>
+            <input style="width: 5em; height: 2em;" type="text" th:field="*{questionScores}">
+        </div>
+        <div>
+            <h3>номер</h3>
+            <input style="width: 5em;" type="text" th:field="*{questionNumber}">
+        </div>
+         
+        <button class="custom-btn btn-16">Добавить</button>
+
+    </form>
+</body>
+
+</html>

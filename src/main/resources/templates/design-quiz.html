@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Admin panel</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1 style="margin-left: auto;margin-right: auto;width: 10em; font-family: Ubuntu">Добавьте викторину</h1>
+    <form style="margin-left: auto;margin-right: auto;width: 10em; font-family: Ubuntu" method="post" th:object="${quizz}">
+        <div>
+            <h3>Заголовок</h3>
+            <input type="text" th:field="*{title}">
+        </div>
+        <div>
+            <h3>Тема</h3>
+            <input type="text" th:field="*{theme}">
+        </div>
+        <div>
+            <h3>Сложность</h3>
+            <input type="text" th:field="*{difficulty}">
+        </div>
+         
+        <button class="custom-btn btn-16">Добавить</button>
+
+    </form>
+</body>
+
+</html>
