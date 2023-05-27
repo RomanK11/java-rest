@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div th:insert="~{header :: header}"></div>
+    <h1 style="text-align: center; vertical-align: middle; font-family: Ubuntu">Добавьте событие</h1>
+    <form style="text-align: center; vertical-align: middle; font-family: Ubuntu" method="post" th:object="${event}">
+        <div>
+            <h3>quiz Id</h3>
+            <input type="text" th:field="*{quizId}">
+        </div>
+        <div>
+            <h3>Дата</h3>
+            <input th:field="*{eventDate}">
+        </div>
+        <div>
+            <h3>Название</h3>
+            <input type="text" th:field="*{eventName}">
+        </div>
+        <div>
+            <h3>Сложность</h3>
+            <input type="text" th:field="*{difficulty}">
+        </div>
+        <div>
+            <h3>очки</h3>
+            <input type="text" th:field="*{dailyScores}">
+        </div>
+         
+        <button class="bttr">Добавить</button>
+<!-- 
+        <a style="display: flex;
+        padding-top: 50px;
+        justify-content: center;
+        font-family: 'Ubuntu';
+        text-decoration: none; font-size: large; color: #000 !important;" th:href="@{/admin}">Главная страница</a> -->
+
+    </form>
+</body>
+</html>

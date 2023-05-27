@@ -11,7 +11,8 @@
     
 </head>
 
-<body style="background-color: #b5bcc3;">
+<body>
+    <div th:insert="~{header :: header}"></div>
     <h1 style="text-align: center; vertical-align: middle; font-family: Ubuntu">Добавьте вопрос для викторины</h1>
     <form style="text-align: center; vertical-align: middle; font-family: Ubuntu" method="post" th:object="${question}">
         <!-- <div>
@@ -40,14 +41,20 @@
         </div>
         <div>
             <h3>очки за вопрос</h3>
-            <input style="width: 5em; height: 2em;" type="text" th:field="*{questionScores}">
+            <input style="width: 7em; height: 2em;" type="text" th:field="*{questionScores}">
         </div>
         <div>
             <h3>номер</h3>
-            <input style="width: 5em;" type="text" th:field="*{questionNumber}">
+            <input style="width: 7em; height: 2em;" type="text" th:field="*{questionNumber}">
         </div>
          
-        <button class="custom-btn btn-16">Добавить</button>
+        <button class="bttr">Добавить</button>
+
+        <!-- <a style="display: flex;
+        padding-top: 50px;
+        justify-content: center;
+        font-family: 'Ubuntu';
+        text-decoration: none; font-size: large; color: #000 !important;" th:href="@{/admin}">Главная страница</a> -->
 
     </form>
 </body>

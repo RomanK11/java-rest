@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html lang="ru">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"></html>
 <head>
-    <title>Admin panel</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos</title>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <div th:insert="~{header :: header}"></div>
-    <h1 style="text-align: center; vertical-align: middle; font-family: Ubuntu">Добавьте викторину</h1>
-    <form style="text-align: center; vertical-align: middle; font-family: Ubuntu" method="post" th:object="${quizz}">
+    <h1 style="text-align: center; vertical-align: middle; font-family: Ubuntu">Добавьте обучающее видео</h1>
+    <form style="text-align: center; vertical-align: middle; font-family: Ubuntu" method="post" th:object="${video}">
         <div>
-            <h3>Заголовок</h3>
-            <input type="text" th:field="*{title}">
+            <h3>Название</h3>
+            <input type="text" th:field="*{videoTitle}">
+        </div>
+        <div>
+            <h3>Ссылка</h3>
+            <input type="text" th:field="*{videoUrl}">
         </div>
         <div>
             <h3>Тема</h3>
             <input type="text" th:field="*{theme}">
-        </div>
-        <div>
-            <h3>Сложность</h3>
-            <input type="text" th:field="*{difficulty}">
         </div>
          
         <button class="bttr">Добавить</button>
@@ -37,5 +38,4 @@
 
     </form>
 </body>
-
 </html>

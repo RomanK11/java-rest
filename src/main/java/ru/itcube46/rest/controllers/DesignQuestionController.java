@@ -30,15 +30,15 @@ public class DesignQuestionController {
     }
 
     @PostMapping(path = "/{id}")
-    public String addQuestion(@PathVariable("id") Long quizId, Questions question) {
+    public String addQuestion(@PathVariable("id") Long quizId, @ModelAttribute("question") Questions question) {
+        question.setId(null); // Обнуляем id вопроса каждый раз, чтобы выполнялась команда INSERT, а не UPDATE
         question.setQuizId(quizId);
         questionsRepository.save(question);
-        
         return "redirect:/admin/questions/%d".formatted(quizId);
     }
 
     @ModelAttribute(name = "question")
-    public Questions question() {
+    public Questions question() { 
         return new Questions();
     }
 

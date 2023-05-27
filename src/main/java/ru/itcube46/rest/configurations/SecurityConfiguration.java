@@ -47,7 +47,7 @@ public class SecurityConfiguration {
         return http
                 .httpBasic(withDefaults())
                 .authorizeHttpRequests(requests -> requests
-                        .requestMatchers("api/posts/**", "api/comments/**").hasRole("USER")
+                        .requestMatchers("api/posts/**", "api/comments/**", "admin/quiz/**").hasRole("USER")
                         .anyRequest().permitAll())
                 .csrf(csrf -> csrf.disable())
                 .headers(h -> h.frameOptions().disable())
